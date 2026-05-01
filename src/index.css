@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-zinc-950: #09090b;
+  --color-zinc-900: #18181b;
+  --color-zinc-800: #27272a;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-50: #fafafa;
+  
+  --color-emerald-500: #10b981;
+  --color-emerald-500-glow: rgba(16, 185, 129, 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-50 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .sleek-card {
+    @apply bg-zinc-900 border border-zinc-800 rounded-2xl p-6 transition-all duration-300;
+  }
+  
+  .sleek-input {
+    @apply bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2.5 text-zinc-50 font-mono text-sm outline-none focus:border-emerald-500 transition-colors;
+  }
+  
+  .sleek-btn {
+    @apply bg-emerald-500 text-black font-bold py-3 px-4 rounded-lg text-xs uppercase tracking-wider hover:bg-emerald-400 active:scale-[0.98] transition-all;
+  }
+  
+  .sleek-title {
+    @apply flex items-center gap-2 text-[11px] font-bold text-zinc-400 uppercase tracking-widest mb-5 before:content-[''] before:w-1.5 before:h-1.5 before:bg-emerald-500 before:rounded-sm;
+  }
+
+  .value-mono {
+    @apply font-mono;
+  }
+}
+
+.neon-glow {
+  text-shadow: 0 0 15px var(--color-emerald-500-glow);
+}
